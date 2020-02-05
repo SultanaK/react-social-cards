@@ -14,3 +14,10 @@ function Card(props) {
 }
 
 export default Card
+
+Card.defaultProps = {
+    imageUrl: "https://image.com", 
+    name: "Todd",
+    age: 5, 
+    description: "Lorem ipsum"
+}

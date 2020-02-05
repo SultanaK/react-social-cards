@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> renders markup as expected WITH props 1`] = `
+<div
+  className="card"
+>
+  <img
+    alt="profile pic"
+    src="https://image.com"
+  />
+  <div
+    className="card-content"
+  >
+    <h3>
+      Name: 
+      Todd
+    </h3>
+    <p>
+      Age: 
+      5
+    </p>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<Card /> renders markup as expected without props 1`] = `
+<div
+  className="card"
+>
+  <img
+    alt="profile pic"
+    src="https://image.com"
+  />
+  <div
+    className="card-content"
+  >
+    <h3>
+      Name: 
+      Todd
+    </h3>
+    <p>
+      Age: 
+      5
+    </p>
+    <p>
+      Lorem ipsum
+    </p>
+  </div>
+</div>
+`;
