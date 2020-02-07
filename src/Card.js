@@ -7,7 +7,9 @@ function Card(props) {
             <div className="card-content">
                 <h3>Name: {props.name}</h3>
                 <p>Age: {props.age}</p>
+                <p>Likes: {props.likes}</p>
                 <p>{props.description}</p>
+
             </div>
         </div>
     )
