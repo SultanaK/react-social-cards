@@ -1,34 +1,31 @@
 import React from 'react';
 import './App.css';
 import CardList from './CardList'
+import MostLiked from './MostLiked'
+import store from './STORE'
 
 class App extends React.Component {
 
-  constructor(props) { // Called before component mounts
-    super(props);
-    console.log("constructor")
+  state = {
+    cards: store
   }
   
-  componentDidMount() {
-    console.log("ComponentDidMount")
-  } // Called after component mounts
+  handleAddLike = () => {
+    console.log(this.state)
+  }
 
   render () {
     return (
       <div className="App">
         <header className="App-header">
           <h1>My Social Media App!!!</h1>
-          <CardList />
+          <MostLiked cards={this.state.cards} />
+          <CardList cards={this.state.cards} handleAddLike={this.handleAddLike} />
+          {/* <button onClick={this.handleAddLike}>LIKE</button> */}
         </header>
       </div>
     );
   }
-
-  componentDidUpdate() {
-    console.log("ComponentDidUpdate")
-  } // Called after each render
-
-  // componentWillUnmount() {} // Called before component unmounts
 
 }
 
