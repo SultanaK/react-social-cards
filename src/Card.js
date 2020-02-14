@@ -9,7 +9,7 @@ function Card(props) {
                 <p>Age: {props.age}</p>
                 <p>Likes: {props.likes}</p>
                 <p>{props.description}</p>
-                <button onClick={props.handleAddLike}>LIKE!</button>
+                <button onClick={() => props.handleAddLike(props.id)}>LIKE!</button>
             </div>
         </div>
     )

@@ -10,8 +10,19 @@ class App extends React.Component {
     cards: store
   }
   
-  handleAddLike = () => {
-    console.log(this.state)
+  handleAddLike = (id) => {
+    const newCardData = this.state.cards.map((item) => {
+      if (id !== item.id) {
+        return item;
+      }
+
+      item.likes += 1;
+      return item;
+    })
+
+    this.setState({
+      cards: newCardData
+    }) 
   }
 
   render () {

@@ -6,22 +6,6 @@ import Card from './Card'
 
 class CardList extends React.Component {
   
-  handleClick = (id) => {
-    // const newCardData = this.state.cardData.map((card) => {
-    //   if (card.id === id) {
-    //     card.likes ++;
-    //   }
-    //   return card;
-    // })
-
-    // this.setState({
-    //   cardData: newCardData,
-    // }) 
-  }
-
-  //this.state
-  //this.props.cards
-  
 
   render() {
 
@@ -34,6 +18,7 @@ class CardList extends React.Component {
                 age={currentCard.age}
                 description={currentCard.description}
                 likes={currentCard.likes}
+                id={currentCard.id}
                 handleAddLike={this.props.handleAddLike}
             />
         )
