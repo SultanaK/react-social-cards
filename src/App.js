@@ -1,8 +1,12 @@
 import React from 'react';
 import './App.css';
 import CardList from './CardList'
-import MostLiked from './MostLiked'
 import store from './STORE'
+import { Route, Switch } from 'react-router-dom'
+import MostLiked from './MostLiked'
+import About from './About'
+import Nav from './Nav'
+import NotFound from './NotFound'
 
 class App extends React.Component {
 
@@ -30,9 +34,22 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1>My Social Media App!!!</h1>
-          <MostLiked cards={this.state.cards} />
-          <CardList cards={this.state.cards} handleAddLike={this.handleAddLike} />
-          {/* <button onClick={this.handleAddLike}>LIKE</button> */}
+          <Nav/>
+
+          <Switch>
+            <Route path="/" exact={true} 
+              render={() => <CardList cards={this.state.cards} handleAddLike={this.handleAddLike} />} 
+            />
+            <Route path="/about" exact={true} component={About} />
+            <Route path="/likes" exact={true} >
+              <MostLiked cards={this.state.cards} />
+            </Route>
+            <Route path="/likes/whatever" exact={true}>
+              Somehting else
+            </Route>
+            <Route component={NotFound} />
+          </Switch>
+   
         </header>
       </div>
     );
