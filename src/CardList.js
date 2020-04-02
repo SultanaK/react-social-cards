@@ -1,6 +1,7 @@
 import React from 'react'
 import './CardList.css'
 import Card from './Card'
+import SortButton from './SortButton'
 import store from './STORE'
 
 class CardList extends React.Component {
@@ -17,11 +18,29 @@ class CardList extends React.Component {
       return card;
     })
 
+    
+
     this.setState({
       cardData: newCardData,
     })
   }
 
+  sortByRank = () => {
+    console.log("sortByRank was called")
+    
+    let unranked = [].concat(this.state.cardData);
+    //[...this.state.cardData] <- also works
+    //Array.sort -> does not return a new value, just reorders an array 
+
+    const ranked = unranked.sort((current, next) => {
+      return next.likes - current.likes 
+    })
+  
+    this.setState({cardData: ranked}) 
+
+  }
+
+  
   render() {
     const cards = this.state.cardData.map((currentCard) => {
       return (
@@ -40,6 +59,7 @@ class CardList extends React.Component {
 
     return (
         <section className="CardList">
+            <SortButton sort={this.sortByRank} />
             {cards}            
         </section>
     )

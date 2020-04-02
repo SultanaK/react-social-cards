@@ -24,7 +24,7 @@ const store = {
           age: 2,
           description: "Sed do eiusmod tempor incididunt ut ",
           id: 3,
-          likes: 0
+          likes: 16
         },  
         {
           name: "Flip",
