@@ -1,0 +1,28 @@
+.profile {
+    background: white;
+    color: black;
+    padding: 1rem;
+    max-width: 80%;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+  }
+  
+  .profile .deleteButton {
+    padding: .25rem;
+    border: 1px solid red;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    width: 200px;
+  }
+  
+  .profile .likeButton {
+    margin-bottom: .5rem;
+    padding: .25rem;
+    border: 1px solid green;
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    width: 200px;
+  }
+  
