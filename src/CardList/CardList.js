@@ -1,7 +1,7 @@
 import React from 'react'
 import './CardList.css'
-import Card from './Card'
-import SortButton from './SortButton'
+import Card from '../Card/Card'
+import SortButton from '../SortButton/SortButton'
 
 class CardList extends React.Component {
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 import './App.css';
-import CardList from './CardList'
-import Faq from './Faq'
-import About from './About'
-import NotFound from './NotFound'
-import store from './STORE'
-import Profile from './Profile/Profile'
+import CardList from '../CardList/CardList'
+import Faq from '../Faq/Faq'
+import About from '../About/About'
+import NotFound from '../NotFound/NotFound'
+import store from '../STORE'
+import Profile from '../Profile/Profile'
 
 
 class App extends React.Component {
@@ -32,7 +32,7 @@ class App extends React.Component {
 
   deleteItem = (id) => {
     const newCardData = this.state.cardData.filter((card) => {
-      return card.id != id;
+      return card.id !== id;
     })
 
     this.setState({
