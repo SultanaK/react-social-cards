@@ -2,14 +2,14 @@ import React from 'react'
 import './CardList.css'
 import Card from '../Card/Card'
 import SortButton from '../SortButton/SortButton'
+import AppContext from '../AppContext'
 
 class CardList extends React.Component {
 
-  
+  static contextType = AppContext
 
-  
   render() {
-    const cards = this.props.cardData.map((currentCard) => {
+    const cards = this.context.cards.map((currentCard) => {
       return (
             <Card 
                 key={currentCard.id}
@@ -19,14 +19,13 @@ class CardList extends React.Component {
                 description={currentCard.description}
                 likes={currentCard.likes}
                 id={currentCard.id}
-                addLike={() => this.props.addLike(currentCard.id)}
             />
         )
     })
 
     return (
         <section className="CardList">
-            <SortButton sort={this.props.sortByRank} />
+            <SortButton />
             {cards}            
         </section>
     )

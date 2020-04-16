@@ -7,6 +7,7 @@ import About from '../About/About'
 import NotFound from '../NotFound/NotFound'
 import store from '../STORE'
 import Profile from '../Profile/Profile'
+import AppContext from '../AppContext'
 
 
 class App extends React.Component {
@@ -57,48 +58,34 @@ class App extends React.Component {
   }
 
   render () {
+    
+    const contextValue = {
+      cards: this.state.cardData,
+      deleteItem: this.deleteItem,
+      addLike: this.addLike,
+      sortByRank: this.sortByRank
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>My Social Media App!!!</h1>          
-          <Link to="/">Home</Link>
-          {' '}
-          <Link to="/about">About</Link>
-          {' '}
-          <Link to="/faq">Faq</Link>
-        </header>
-        <Switch>
-
-          <Route exact path="/" render={() => {
-            return (
-              <CardList 
-                cardData={this.state.cardData} 
-                sortByRank={this.sortByRank} 
-                addLike={this.addLike} 
-              />
-            )            
-          }} />
-
-          <Route exact path="/profile/:id" render={(routeProps) => {
-            const cardId = routeProps.match.params.id;
-
-            const selectedCard = this.state.cardData.find((card) => {
-              return cardId === card.id.toString()
-            }) 
-            
-            return (
-              <Profile 
-                history={routeProps.history} 
-                {...selectedCard} 
-                deleteItem={this.deleteItem} 
-              />
-            )
-          }} /> 
-          <Route exact path="/faq" component={Faq} /> 
-          <Route exact path="/about" component={About} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
+      <AppContext.Provider value={contextValue}>
+        <div className="App">
+          <header className="App-header">
+            <h1>My Social Media App!!!</h1>          
+            <Link to="/">Home</Link>
+            {' '}
+            <Link to="/about">About</Link>
+            {' '}
+            <Link to="/faq">Faq</Link>
+          </header>
+          <Switch>
+            <Route exact path="/" component={CardList} />
+            <Route exact path="/profile/:id" component={Profile} />
+            <Route exact path="/faq" component={Faq} /> 
+            <Route exact path="/about" component={About} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </AppContext.Provider>
     );
   }
 

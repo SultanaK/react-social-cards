@@ -1,11 +1,16 @@
 import React from 'react'
+import AppContext from '../AppContext'
 
-function SortButton(props) {
+function SortButton() {
     return (
-        <>
-            <button onClick={props.sort}>Sort By Likes</button>
-            <br />
-        </>
+        <AppContext.Consumer>
+            {(contextProps) => (
+                <>
+                    <button onClick={contextProps.sortByRank}>Sort By Likes</button>
+                    <br />
+                </>
+            )}
+        </AppContext.Consumer>
     )
 }
 

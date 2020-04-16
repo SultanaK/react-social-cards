@@ -1,4 +1,5 @@
 import React from 'react'
+import AppContext from '../AppContext'
 
 class LikeButton extends React.Component {
 
@@ -6,10 +7,11 @@ class LikeButton extends React.Component {
     //     // other stuff happens here
     //     this.props.addLike()
     // }
+    static contextType = AppContext
 
     render() {
         return (
-            <button onClick={this.props.addLike}>Like</button>
+            <button onClick={() => this.context.addLike(this.props.id)}>Like</button>
         )
     }
 }

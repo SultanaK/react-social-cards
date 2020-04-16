@@ -1,29 +1,36 @@
 import React from 'react'
 import './Profile.css'
-
+import AppContext from '../AppContext'
 
 class Profile extends React.Component {
 
-  deleteAndGoBack = () => {
-    this.props.deleteItem(this.props.id)
+  static contextType = AppContext;
+
+  deleteAndGoBack = (id) => {
+    this.context.deleteItem(id)
     // go back
     this.props.history.push("/");
   }
   
   render() {
 
+    const id = this.props.match.params.id
+    const currentCard = this.context.cards.find((card) => 
+      id === card.id.toString()
+    )
+
     return(
       <div className="profile">
-        <img src={this.props.imageUrl} alt="profile pic" />
-        <h1>{this.props.name}</h1>
+        <img src={currentCard.imageUrl} alt="profile pic" />
+        <h1>{currentCard.name}</h1>
         <p>
-          {this.props.description}
+          {currentCard.description}
         </p>
         <p>
-          <strong>Likes: {this.props.likes}</strong>
+          <strong>Likes: {currentCard.likes}</strong>
         </p>
         <button 
-          onClick={this.deleteAndGoBack} 
+          onClick={() => this.deleteAndGoBack(currentCard.id)} 
           className="deleteButton" >
           Delete :(
         </button>
