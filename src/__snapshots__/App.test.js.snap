@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders UI as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <h1>
+      My AMAZING Social Media App!
+    </h1>
+    <section
+      className="CardList"
+    >
+      <div
+        className="card"
+      >
+        <img
+          alt="profile pic"
+          src="https://source.unsplash.com/mx0DEnfYxic/300x300"
+        />
+        <div
+          className="card-content"
+        >
+          <h3>
+            STEVE
+          </h3>
+          <p>
+            Age: 
+            5
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+      <div
+        className="card"
+      >
+        <img
+          alt="profile pic"
+          src="https://source.unsplash.com/v3-zcCWMjgM/300x300"
+        />
+        <div
+          className="card-content"
+        >
+          <h3>
+            CHIP
+          </h3>
+          <p>
+            Age: 
+            3
+          </p>
+          <p>
+            consectetur adipiscing elit
+          </p>
+        </div>
+      </div>
+      <div
+        className="card"
+      >
+        <img
+          alt="profile pic"
+          src="https://source.unsplash.com/JU5ewSjt8Yw/300x300"
+        />
+        <div
+          className="card-content"
+        >
+          <h3>
+            BANJO
+          </h3>
+          <p>
+            Age: 
+            2
+          </p>
+          <p>
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+      </div>
+      <div
+        className="card"
+      >
+        <img
+          alt="profile pic"
+          src="https://source.unsplash.com/NKN25UfGfkQ/300x300"
+        />
+        <div
+          className="card-content"
+        >
+          <h3>
+            FLIP
+          </h3>
+          <p>
+            Age: 
+            6
+          </p>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          </p>
+        </div>
+      </div>
+    </section>
+  </header>
+</div>
+`;
