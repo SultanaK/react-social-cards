@@ -2,6 +2,11 @@ import React from 'react';
 import './App.css';
 import CardList from './CardList';
 import SortButton from './SortButton';
+import About from './About'
+import Faq from './Faq'
+import Nav from './Nav'
+import NotFound from './NotFound'
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -74,9 +79,23 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">          
+          <Nav/>
           <h1>My AMAZING Social Media App!</h1>
-          <SortButton handleSortByRank={this.sortByRank}/>
-          <CardList cards={this.state.cardData} addLike={this.addLike} />
+          {/* <SortButton handleSortByRank={this.sortByRank}/>
+          <CardList cards={this.state.cardData} addLike={this.addLike} /> */}
+          <Switch>
+            <Route path="/" exact render={() => {
+              return (
+                <main>
+                  <SortButton handleSortByRank={this.sortByRank}/>
+                  <CardList cards={this.state.cardData} addLike={this.addLike} />
+                </main>
+              )
+            }} />
+            <Route path="/about" exact component={About} />
+            <Route path="/faq" exact component={Faq} />
+            <Route component={NotFound} />
+          </Switch>
         </header>
       </div>
     );
